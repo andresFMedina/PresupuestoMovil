@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Presupuesto</string>
+    <string name="codigo">Código</string>
+    <string name="descripcion">Descripción</string>
+    <string name="rend">Rend</string>
+    <string name="desp">Desp</string>
+    <string name="valor_u">V.U.</string>
+    <string name="subtotal">Subtotal</string>
+</resources>

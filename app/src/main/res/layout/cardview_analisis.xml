@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.andresfelipe.presupuesto.viewmodel.AnalisisUnitarioViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_analisis"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_analisisCard"
+        android:paddingEnd="@dimen/detalle_marginHorizontal"
+        android:paddingStart="@dimen/detalle_marginHorizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvCodigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/analisis_textSize"
+                    android:layout_marginStart="@dimen/detalle_marginHorizontal"
+                    android:text="@{model.getAnalisisAt(position).codigo}"
+                    />
+
+                <TextView
+                    android:id="@+id/tvUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.getAnalisisAt(position).unidad}"
+                    android:gravity="end"
+                    android:textSize="@dimen/analisis_textSize"
+                    android:layout_marginStart="@dimen/detalle_marginHorizontal"
+                    android:layout_toEndOf="@id/tvCodigo" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/analisis_textSize"
+                    android:layout_marginStart="@dimen/detalle_marginHorizontal"
+                    android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+                    android:text="@{model.getAnalisisAt(position).descripcion}"
+                    />
+
+                <TextView
+                    android:id="@+id/tvGrupo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.getAnalisisAt(position).grupo}"
+                    android:gravity="end"
+                    android:textSize="@dimen/analisis_textSize"
+                    android:layout_marginStart="@dimen/detalle_marginHorizontal"
+                    android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+                    android:layout_toEndOf="@id/tvDescripcion" />
+            </RelativeLayout>
+
+<!--            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                tools:listitem="@layout/linearlayout_detalle" />-->
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

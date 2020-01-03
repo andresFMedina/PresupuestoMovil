@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/height_detalle">
+
+        <TextView
+            android:id="@+id/tvCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/codigo"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="@string/descripcion"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvRendimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/rend"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvDesperdicio"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/desp"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvPrecioUnitario"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/valor_u"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+
+        <TextView
+            android:id="@+id/tvSubtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/subtotal"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+
+</LinearLayout>

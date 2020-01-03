@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detalle_textSize">16sp</dimen>
+    <dimen name="detalle_marginHorizontal">7dp</dimen>
+    <dimen name="detalle_marginBottom">5dp</dimen>
+    <dimen name="analisis_textSize">22sp</dimen>
+    <dimen name="height_detalle">50dp</dimen>
+    <dimen name="height_analisisCard">300dp</dimen>
+</resources>
