@@ -3,6 +3,7 @@ package com.example.andresfelipe.presupuesto.model.analisisunitario
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.andresfelipe.presupuesto.model.ApiAdapter
+import com.example.andresfelipe.presupuesto.utils.Constants
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -17,8 +18,8 @@ class AnalisisUnitarioRepositoryImpl: AnalisisUnitarioRepository {
         return analisisUnitarios
     }
 
-    override fun callPresupuestoApi() {
-        var analisisList: ArrayList<AnalisisUnitario>? = ArrayList<AnalisisUnitario>()
+    override fun callAnalisisUnitarioList() {
+        val analisisList: ArrayList<AnalisisUnitario>? = ArrayList()
         val apiAdapter = ApiAdapter()
         val apiService = apiAdapter.getClientService()
         val call = apiService.getAnalisisUnitarioList()
@@ -30,10 +31,10 @@ class AnalisisUnitarioRepositoryImpl: AnalisisUnitarioRepository {
             }
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                val analisisJsonArray = response.body()?.getAsJsonArray("model")
+                val analisisJsonArray = response.body()?.getAsJsonArray(Constants.MODEL)
                 analisisJsonArray?.forEach { jsonElement: JsonElement ->
-                    var jsonObject = jsonElement.asJsonObject
-                    var analisisUnitario = AnalisisUnitario(jsonObject)
+                    val jsonObject = jsonElement.asJsonObject
+                    val analisisUnitario = AnalisisUnitario(jsonObject)
                     analisisList?.add(analisisUnitario)
                 }
 

@@ -8,9 +8,9 @@ import java.io.Serializable
 class Detalle(jsonObject: JsonObject): Serializable {
 
     var id: Int = 0
-    var analisisUnitarioId: Int = 0
+    var analisisUnitarioId: Int? = 0
     var analisisUnitario: AnalisisUnitario? = null
-    var itemId: Int = 0
+    var itemId: Int? = 0
     var item: Item? = null
     var rendimiento: Double = 0.0
     lateinit var codigo: String
@@ -22,4 +22,23 @@ class Detalle(jsonObject: JsonObject): Serializable {
     lateinit var detalleDe: String
     var subTotal: Int = 0
 
+    
+    init {
+        try {
+            id = jsonObject.get("id").asInt
+            rendimiento = jsonObject.get("rendimiento").asDouble
+            codigo = jsonObject.get("codigo").asString
+            descripcion = jsonObject.get("descripcion").asString
+            unidad = jsonObject.get("unidad").asString
+            precio = jsonObject.get("precio").asInt
+            grupo = jsonObject.get("grupo").asString
+            desperdicio = jsonObject.get("desperdicio").asDouble
+            detalleDe = jsonObject.get("detalleDe").asString
+            subTotal = jsonObject.get("subTotal").asInt
+            analisisUnitarioId = jsonObject.get("analisisUnitarioId").asInt
+            itemId = jsonObject.get("itemId").asInt
+        } catch (e: Exception) {
+            e.stackTrace
+        }
+    }
 }

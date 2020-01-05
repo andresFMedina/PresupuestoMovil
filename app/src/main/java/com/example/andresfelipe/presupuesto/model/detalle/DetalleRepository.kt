@@ -1,7 +1,10 @@
 package com.example.andresfelipe.presupuesto.model.detalle
 
+import androidx.lifecycle.MutableLiveData
+
 interface DetalleRepository {
 
-    fun getDetallesByAnalisisId(analisisId: Int): MutableListIterator<List<Detalle>>
-    fun callPresupuestoApi()
+    fun getDetalles(): MutableLiveData<List<Detalle>>
+    fun callDetallesByAnalisisId(analisisId: Int)
+
 }

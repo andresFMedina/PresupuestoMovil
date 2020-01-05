@@ -1,10 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/detalle_marginBottom"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/linearlayout_detalle" />
+    <data>
+        <variable
+            name="model"
+            type="com.example.andresfelipe.presupuesto.viewmodel.DetalleViewModel" />
+        
+        <variable
+            name="position"
+            type="int" />
+    </data>
 
-</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_detalle"
+        android:layout_marginBottom="@dimen/detalle_marginBottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvCodigo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{model.getDetalleAt(position).codigo}"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="@{model.getDetalleAt(position).descripcion}"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvRendimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{Double.toString(model.getDetalleAt(position).rendimiento)}"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvDesperdicio"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{Double.toString(model.getDetalleAt(position).desperdicio)}"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        <TextView
+            android:id="@+id/tvPrecioUnitario"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{Integer.toString(model.getDetalleAt(position).precio)}"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+
+        <TextView
+            android:id="@+id/tvSubtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{Integer.toString(model.getDetalleAt(position).subTotal)}"
+            android:gravity="center"
+            android:textSize="@dimen/detalle_textSize"
+            android:layout_marginStart="@dimen/detalle_marginHorizontal"
+            android:layout_marginEnd="@dimen/detalle_marginHorizontal"
+            />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

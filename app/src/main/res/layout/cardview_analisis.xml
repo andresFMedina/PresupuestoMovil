@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -74,12 +75,15 @@
                     android:layout_toEndOf="@id/tvDescripcion" />
             </RelativeLayout>
 
-<!--            <androidx.recyclerview.widget.RecyclerView
+          <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                tools:listitem="@layout/linearlayout_detalle" />-->
+                tools:listitem="@layout/linearlayout_detalle"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:setAdapter="@{model.getDetalleViewModel.getRecyclerDetalleAdapter}"
+              />
 
         </LinearLayout>
 

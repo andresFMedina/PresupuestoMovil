@@ -9,7 +9,7 @@ class AnalisisUnitarioObservable: BaseObservable() {
     private var analisisUnitarioRepository: AnalisisUnitarioRepository = AnalisisUnitarioRepositoryImpl()
 
     fun callPresupuesto(){
-        analisisUnitarioRepository.callPresupuestoApi()
+        analisisUnitarioRepository.callAnalisisUnitarioList()
     }
 
     fun getAnalisisUnitarios(): MutableLiveData<List<AnalisisUnitario>> {

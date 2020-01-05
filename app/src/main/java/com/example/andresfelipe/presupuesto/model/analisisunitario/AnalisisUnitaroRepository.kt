@@ -5,5 +5,5 @@ import androidx.lifecycle.MutableLiveData
 interface AnalisisUnitarioRepository {
 
     fun getAnalisisUnitarioList(): MutableLiveData<List<AnalisisUnitario>>
-    fun callPresupuestoApi()
+    fun callAnalisisUnitarioList()
 }

@@ -11,6 +11,7 @@ class AnalisisUnitarioViewModel: ViewModel() {
 
     private var analisisUnitarioObservable: AnalisisUnitarioObservable = AnalisisUnitarioObservable()
     private var recyclerAnalisisAdapter: RecyclerAnalisisAdapter? = null
+    private var detalleViewModel: DetalleViewModel? = null
     //var selected:
 
     fun callPresupuesto(){
@@ -32,7 +33,15 @@ class AnalisisUnitarioViewModel: ViewModel() {
     }
 
     fun getAnalisisAt(position: Int): AnalisisUnitario? {
-        var analisis: List<AnalisisUnitario>? = analisisUnitarioObservable.getAnalisisUnitarios().value
+        val analisis: List<AnalisisUnitario>? = analisisUnitarioObservable.getAnalisisUnitarios().value
         return analisis?.get(position)
+    }
+
+    fun getDetalleViewModel(): DetalleViewModel? {
+        return detalleViewModel
+    }
+
+    fun setDetalleViewModel(detalleViewModel: DetalleViewModel?){
+        this.detalleViewModel = detalleViewModel
     }
 }

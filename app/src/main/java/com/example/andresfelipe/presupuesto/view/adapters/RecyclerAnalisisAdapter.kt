@@ -19,8 +19,8 @@ class RecyclerAnalisisAdapter(var analisisUnitarioViewModel: AnalisisUnitarioVie
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnalisisHolder {
-        var layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
-        var binding: ViewDataBinding = DataBindingUtil.inflate(layoutInflater, viewType, parent, false)
+        val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
+        val binding: ViewDataBinding = DataBindingUtil.inflate(layoutInflater, viewType, parent, false)
         return AnalisisHolder(binding)
     }
 
